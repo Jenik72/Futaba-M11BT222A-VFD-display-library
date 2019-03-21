@@ -1,0 +1,9 @@
+FutabaMT KEYWORD1
+Init  KEYWORD2
+Write KEYWORD2
+Cmd KEYWORD2
+SetMem KEYWORD2
+Write3Digit KEYWORD2
+WriteDisplayRam KEYWORD2
+discRotate KEYWORD2
+printChar KEYWORD2
