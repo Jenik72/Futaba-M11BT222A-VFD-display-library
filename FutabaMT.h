@@ -1,3 +1,21 @@
+/*
+ Copyright (c) 2019, Denisoft, CZ
+ Original code (pre-library): unknown, based on pt6311 driver code from Internet
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+*/
+
+
+
 #if ARDUINO >= 100
   #include "Arduino.h"
 #else
@@ -73,11 +91,11 @@ public:
   void DiscValue(unsigned char pocet);                    // light one of 8 segments of disc
   void DiscBar(unsigned int pocet);                       // light bargraph in 8 segments of disc
   void ClearNumDisp();                                    // clear number display
-  void On_Auto();                                         // turn on "AUTO"
-  void Off_Auto();                                        // turn off "AUTO"
+  void On_Auto();                                         // turn on "AUTO" sign
+  void Off_Auto();                                        // turn off "AUTO" sign
   void On_Epg();                                          // turn on "EPG"
   void Off_Epg();                                         // turn off "EPG"
-  void On_Trans();                                        // turn on
+  void On_Trans();                                        // turn on etc.
   void Off_Trans();                                       // turn off
   void On_Mail();                                         // turn on
   void Off_Mail();                                        // turn off
@@ -113,7 +131,7 @@ private:
   void WriteCDigit(unsigned char digit, unsigned char s3);                   // writes 1 memory cell at once - position A
   void WriteDisplayRam(unsigned char addr, unsigned char *data, unsigned char len);
 
-// ----------------------- char tables  - first two lines for alphanumeric display , third row for 7segment number display -------
+// ----------------------- char tables  - first two lines for alphanumeric 5 position display , third row digits for 7segment number display -------
   uint8_t _charSetUpper[43] =  { 49,24,209,209,240,225,225,17,241,241,0,0,0,0,0,0,0,241,213,33,149,161,161,225,240,132,16,168,32,186,178,49,241,177,241,225,133,48,168,176,138,138,137};
   uint8_t _charSetLower[43] = { 70,2,69,66,3,67,71,2,71,67,0,0,0,0,0,0,0,7,82,68,82,69,5,70,7,16,70,37,68,6,38,70,5,102,37,67,16,70,12,46,40,16,72};
   uint8_t _charSetNumber[10] = {119,18,107,91,30,93,125,19,127,31};
